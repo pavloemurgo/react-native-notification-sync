@@ -1,0 +1,30 @@
+{
+  "$schema": "https://nitro.margelo.com/nitro.schema.json",
+  "cxxNamespace": [
+    "notificationsync"
+  ],
+  "ios": {
+    "iosModuleName": "NotificationSync"
+  },
+  "android": {
+    "androidNamespace": [
+      "notificationsync"
+    ],
+    "androidCxxLibName": "NotificationSync"
+  },
+  "autolinking": {
+    "NotificationSync": {
+      "ios": {
+        "language": "swift",
+        "implementationClassName": "HybridNotificationSync"
+      },
+      "android": {
+        "language": "kotlin",
+        "implementationClassName": "HybridNotificationSync"
+      }
+    }
+  },
+  "ignorePaths": [
+    "**/node_modules"
+  ]
+}
