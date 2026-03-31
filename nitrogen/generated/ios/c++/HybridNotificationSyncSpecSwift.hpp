@@ -14,7 +14,7 @@ namespace NotificationSync { class HybridNotificationSyncSpec_cxx; }
 
 
 
-
+#include <string>
 
 #include "NotificationSync-Swift-Cxx-Umbrella.hpp"
 
@@ -66,13 +66,19 @@ namespace margelo::nitro::notificationsync {
 
   public:
     // Methods
-    inline double sum(double num1, double num2) override {
-      auto __result = _swiftPart.sum(std::forward<decltype(num1)>(num1), std::forward<decltype(num2)>(num2));
+    inline std::string getPendingNotifications() override {
+      auto __result = _swiftPart.getPendingNotifications();
       if (__result.hasError()) [[unlikely]] {
         std::rethrow_exception(__result.error());
       }
       auto __value = std::move(__result.value());
       return __value;
+    }
+    inline void clearPendingNotifications() override {
+      auto __result = _swiftPart.clearPendingNotifications();
+      if (__result.hasError()) [[unlikely]] {
+        std::rethrow_exception(__result.error());
+      }
     }
 
   private:

@@ -54,7 +54,8 @@ namespace margelo::nitro::notificationsync {
 
   public:
     // Methods
-    double sum(double num1, double num2) override;
+    std::string getPendingNotifications() override;
+    void clearPendingNotifications() override;
 
   private:
     jni::global_ref<JHybridNotificationSyncSpec::JavaPart> _javaPart;

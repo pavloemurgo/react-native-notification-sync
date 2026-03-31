@@ -1,12 +1,17 @@
 {
   "name": "react-native-notification-sync",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "react-native-notification-sync is a react native package built with Nitro",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
   "react-native": "src/index",
   "source": "src/index",
+  "plugin": "./app.plugin",
+  "expo-module-config": {
+    "platforms": ["ios", "android"]
+  },
+
   "scripts": {
     "typecheck": "tsc --noEmit",
     "clean": "git clean -dfX",

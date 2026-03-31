@@ -16,6 +16,7 @@ namespace margelo::nitro::notificationsync { class HybridNotificationSyncSpec; }
 #include <NitroModules/Result.hpp>
 #include <exception>
 #include <memory>
+#include <string>
 
 // C++ helpers for Swift
 #include "NotificationSync-Swift-Cxx-Bridge.hpp"

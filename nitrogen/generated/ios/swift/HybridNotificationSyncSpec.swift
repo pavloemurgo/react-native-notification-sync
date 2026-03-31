@@ -13,7 +13,8 @@ public protocol HybridNotificationSyncSpec_protocol: HybridObject {
   
 
   // Methods
-  func sum(num1: Double, num2: Double) throws -> Double
+  func getPendingNotifications() throws -> String
+  func clearPendingNotifications() throws -> Void
 }
 
 public extension HybridNotificationSyncSpec_protocol {

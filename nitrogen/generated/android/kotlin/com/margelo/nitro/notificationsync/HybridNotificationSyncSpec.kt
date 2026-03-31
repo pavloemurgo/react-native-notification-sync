@@ -30,7 +30,11 @@ abstract class HybridNotificationSyncSpec: HybridObject() {
   // Methods
   @DoNotStrip
   @Keep
-  abstract fun sum(num1: Double, num2: Double): Double
+  abstract fun getPendingNotifications(): String
+  
+  @DoNotStrip
+  @Keep
+  abstract fun clearPendingNotifications(): Unit
 
   // Default implementation of `HybridObject.toString()`
   override fun toString(): String {

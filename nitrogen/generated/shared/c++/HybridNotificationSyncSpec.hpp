@@ -15,7 +15,7 @@
 
 
 
-
+#include <string>
 
 namespace margelo::nitro::notificationsync {
 
@@ -48,7 +48,8 @@ namespace margelo::nitro::notificationsync {
 
     public:
       // Methods
-      virtual double sum(double num1, double num2) = 0;
+      virtual std::string getPendingNotifications() = 0;
+      virtual void clearPendingNotifications() = 0;
 
     protected:
       // Hybrid Setup

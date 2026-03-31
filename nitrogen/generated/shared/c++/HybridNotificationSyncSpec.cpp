@@ -14,7 +14,8 @@ namespace margelo::nitro::notificationsync {
     HybridObject::loadHybridMethods();
     // load custom methods/properties
     registerHybrids(this, [](Prototype& prototype) {
-      prototype.registerHybridMethod("sum", &HybridNotificationSyncSpec::sum);
+      prototype.registerHybridMethod("getPendingNotifications", &HybridNotificationSyncSpec::getPendingNotifications);
+      prototype.registerHybridMethod("clearPendingNotifications", &HybridNotificationSyncSpec::clearPendingNotifications);
     });
   }
 

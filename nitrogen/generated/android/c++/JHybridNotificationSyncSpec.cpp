@@ -9,7 +9,7 @@
 
 
 
-
+#include <string>
 
 namespace margelo::nitro::notificationsync {
 
@@ -44,10 +44,14 @@ namespace margelo::nitro::notificationsync {
   
 
   // Methods
-  double JHybridNotificationSyncSpec::sum(double num1, double num2) {
-    static const auto method = _javaPart->javaClassStatic()->getMethod<double(double /* num1 */, double /* num2 */)>("sum");
-    auto __result = method(_javaPart, num1, num2);
-    return __result;
+  std::string JHybridNotificationSyncSpec::getPendingNotifications() {
+    static const auto method = _javaPart->javaClassStatic()->getMethod<jni::local_ref<jni::JString>()>("getPendingNotifications");
+    auto __result = method(_javaPart);
+    return __result->toStdString();
+  }
+  void JHybridNotificationSyncSpec::clearPendingNotifications() {
+    static const auto method = _javaPart->javaClassStatic()->getMethod<void()>("clearPendingNotifications");
+    method(_javaPart);
   }
 
 } // namespace margelo::nitro::notificationsync

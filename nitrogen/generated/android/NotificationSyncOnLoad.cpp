@@ -27,7 +27,7 @@ int initialize(JavaVM* vm) {
 }
 
 struct JHybridNotificationSyncSpecImpl: public jni::JavaClass<JHybridNotificationSyncSpecImpl, JHybridNotificationSyncSpec::JavaPart> {
-  static constexpr auto kJavaDescriptor = "Lcom/notificationsync/HybridNotificationSync;";
+  static constexpr auto kJavaDescriptor = "Lcom/margelo/nitro/notificationsync/HybridNotificationSync;";
   static std::shared_ptr<JHybridNotificationSyncSpec> create() {
     static const auto constructorFn = javaClassStatic()->getConstructor<JHybridNotificationSyncSpecImpl::javaobject()>();
     jni::local_ref<JHybridNotificationSyncSpec::JavaPart> javaPart = javaClassStatic()->newObject(constructorFn);
